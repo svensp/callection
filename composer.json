@@ -1,0 +1,13 @@
+{
+    "name": "svensp/closure-stack",
+    "description": "Track 'current' items for stacked closure calls",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sven Speckmaier",
+            "email": "sven@speckmaier.de"
+        }
+    ],
+    "require": {}
+}
