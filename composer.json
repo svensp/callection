@@ -9,5 +9,20 @@
             "email": "sven@speckmaier.de"
         }
     ],
-    "require": {}
+    "autoload": {
+      "psr-4": {
+        "ClosureStack\\": "src/"
+      }
+    },
+    "autoload-dev": {
+      "psr-4": {
+        "ClosureStackTests\\": "tests/"
+      }
+    },
+    "require": {
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.3",
+        "orchestra/testbench": "^4.0"
+    }
 }
