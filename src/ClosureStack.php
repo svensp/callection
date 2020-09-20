@@ -2,7 +2,6 @@
 
 namespace ClosureStack;
 
-use Closure;
 use ClosureStack\Exceptions\NoValueException;
 use SplStack;
 
@@ -11,7 +10,12 @@ class ClosureStack {
   /**
    * @var SplStack
    **/
-  private $valueStack;
+  private $stack;
+
+  /**
+   * @var TestCollection
+   **/
+  private $collection;
 
   /**
    * @var string
@@ -22,21 +26,35 @@ class ClosureStack {
   {
     $name = $name ?? '';
 
-    $this->valueStack = new SplStack;
+    $this->stack = new SplStack;
     $this->name = $name;
+    $this->collection = new TestCollection;
   }
 
-  public function currentValue()
+  public function callWith(callable $closure, $with)
   {
-    if( $this->valueStack->isEmpty() )
-      throw new NoValueException("Tried to read value from {$this->name} while it is empty");
-    return $this->valueStack->top();
-  }
-
-  public function callWith(Closure $closure, $with)
-  {
-    $this->valueStack->push($with);
+    $this->collection->push($with);
+    $this->stack->push($with);
     $closure($with);
-    $this->valueStack->pop();
+    $this->stack->pop();
   }
+
+  public function current()
+  {
+    if( $this->stack->isEmpty() )
+      throw new NoValueException("Tried to read value from {$this->name} while it is empty");
+
+    return $this->stack->top();
+  }
+
+  public function get($name)
+  {
+    return $this->collection->get($name);
+  }
+
+  public function setNameMapper(callable $nameMapper)
+  {
+    $this->collection->setValueToNameMapper($nameMapper);
+  }
+
 }

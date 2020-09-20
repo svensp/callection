@@ -2,8 +2,8 @@
 
 namespace ClosureStackTests;
 
-use Orchestra\Testbench\TestCase as OrchestraTestCase;
+use PHPUnit\Framework\TestCase as FrameworkTestCase;
 
-class TestCase extends OrchestraTestCase {
+class TestCase extends FrameworkTestCase {
   
 }
