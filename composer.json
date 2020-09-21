@@ -1,5 +1,5 @@
 {
-    "name": "svensp/closure-stack",
+    "name": "svensp/nested-callable-collection",
     "description": "Track 'current' items for stacked closure calls",
     "type": "library",
     "license": "MIT",
