@@ -1,5 +1,5 @@
 {
-    "name": "svensp/nested-callable-collection",
+    "name": "svensp/callection",
     "description": "Track 'current' items for stacked closure calls",
     "type": "library",
     "license": "MIT",
@@ -11,15 +11,19 @@
     ],
     "autoload": {
       "psr-4": {
-        "ClosureStack\\": "src/"
+        "Callection\\": "src/"
       }
     },
     "autoload-dev": {
       "psr-4": {
-        "ClosureStackTests\\": "tests/"
+        "CallectionTests\\": "tests/"
       }
     },
     "require": {
+    },
+    "scripts": {
+      "codestyle": "vendor/bin/phpcs --standard=PSR2 --extensions=php src && vendor/bin/phpcs --standard=tests/.codestyle.xml --extensions=php tests",
+      "fixstyle": "vendor/bin/phpcbf --standard=PSR2 --extensions=php src ; vendor/bin/phpcbf --standard=tests/.codestyle.xml --extensions=php tests"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.3",

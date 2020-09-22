@@ -1,7 +1,8 @@
 <?php
 
-namespace ClosureStack\Exceptions;
+namespace Callection\Exceptions;
 
-class NoValueException extends Exception {
+class NoValueException extends Exception
+{
   
 }

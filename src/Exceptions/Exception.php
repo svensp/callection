@@ -1,9 +1,10 @@
 <?php
 
-namespace ClosureStack\Exceptions;
+namespace Callection\Exceptions;
 
 use RuntimeException;
 
-class Exception extends RuntimeException {
+class Exception extends RuntimeException
+{
   
 }

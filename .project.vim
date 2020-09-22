@@ -1,1 +1,1 @@
-let b:namespace_roots='{"src":"ClosureStack", "tests":"ClosureStackTests"}'
+let b:namespace_roots='{"src":"Callection", "tests":"CallectionTests"}'
