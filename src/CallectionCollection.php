@@ -2,7 +2,7 @@
 
 namespace Callection;
 
-class TestCollection
+class CallectionCollection
 {
 
   /**

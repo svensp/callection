@@ -2,14 +2,11 @@
 
 namespace Callection;
 
-use Callection\Exceptions\NoValueException;
-use SplStack;
-
 class Callection
 {
 
   /**
-   * @var SplStack
+   * @var CallectionStack
    **/
     private $stack;
 
@@ -18,18 +15,12 @@ class Callection
    **/
     private $collection;
 
-  /**
-   * @var string
-   **/
-    private $name = '';
-
     public function __construct($name = null)
     {
         $name = $name ?? '';
 
-        $this->stack = new SplStack;
-        $this->name = $name;
-        $this->collection = new TestCollection;
+        $this->stack = new CallectionStack($name);
+        $this->collection = new CallectionCollection;
     }
 
     public function callWith(callable $closure, $with)
@@ -42,11 +33,7 @@ class Callection
 
     public function current()
     {
-        if ($this->stack->isEmpty()) {
-            throw new NoValueException("Tried to read value from {$this->name} while it is empty");
-        }
-
-        return $this->stack->top();
+      return $this->stack->current();
     }
 
     public function get($name)
